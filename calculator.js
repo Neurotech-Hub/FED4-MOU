@@ -42,6 +42,7 @@
     profitPerUnit: document.getElementById("profit-per-unit"),
     initialPosition: document.getElementById("initial-position"),
     breakEvenUnit: document.getElementById("break-even-unit"),
+    allProfitUnit: document.getElementById("all-profit-unit"),
     finalProfit: document.getElementById("final-profit"),
   };
 
@@ -67,6 +68,7 @@
     const data = [];
     let position = initialPosition;
     let breakEvenUnit = null;
+    let allProfitUnit = null;
 
     data.push({ x: 0, y: position });
 
@@ -75,13 +77,12 @@
       batchStart < EXCLUSIVE_UNITS;
       batchStart += RESTOCK_BATCH
     ) {
-      if (breakEvenUnit === null) {
-        for (let n = 1; n <= RESTOCK_BATCH; n++) {
-          const p = position + n * internalSalePrice;
-          if (p >= 0) {
-            breakEvenUnit = batchStart + n;
-            break;
-          }
+      for (let n = 1; n <= RESTOCK_BATCH; n++) {
+        const p = position + n * internalSalePrice;
+        if (p >= 0) {
+          if (breakEvenUnit === null) breakEvenUnit = batchStart + n;
+          if (allProfitUnit === null) allProfitUnit = batchStart + n;
+          if (breakEvenUnit !== null && allProfitUnit !== null) break;
         }
       }
       const batchEnd = batchStart + RESTOCK_BATCH;
@@ -90,6 +91,9 @@
       if (batchEnd < EXCLUSIVE_UNITS) {
         position -= restockCost;
         data.push({ x: batchEnd, y: position });
+        if (position < 0) {
+          allProfitUnit = null;
+        }
       }
     }
 
@@ -101,6 +105,7 @@
       initialPosition,
       finalPosition: position,
       breakEvenUnit,
+      allProfitUnit,
       data,
     };
   }
@@ -123,6 +128,8 @@
     );
     summaryEls.breakEvenUnit.textContent =
       model.breakEvenUnit === null ? "—" : `unit ${model.breakEvenUnit}`;
+    summaryEls.allProfitUnit.textContent =
+      model.allProfitUnit === null ? "—" : `unit ${model.allProfitUnit}`;
     summaryEls.finalProfit.textContent = currencyFmt.format(
       model.finalPosition
     );
