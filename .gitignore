@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# Node / front-end tooling
+node_modules/
+.cache/
+.parcel-cache/
+dist/
+build/
+.tmp/
+
+# Logs and env
+*.log
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FED4 Financial Calculator &mdash; Neurotech Hub Investment</title>
+    <meta
+      name="description"
+      content="Interactive calculator modeling the Neurotech Hub's cumulative cash position during the FED4 EXCLUSIVE_UNITS phase."
+    />
+    <link rel="stylesheet" href="calculator.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"
+      defer
+    ></script>
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1>FED4 Financial Calculator</h1>
+        <p class="lede">
+          Models the <strong>Neurotech Hub's</strong> cumulative cash position
+          during the <code>EXCLUSIVE_UNITS</code> phase, starting from an FY26
+          engineering investment of <strong>~100 hours @ $60/hr = $6,000</strong>
+          and an initial stocking batch of <code>RESTOCK_BATCH</code> units.
+          Adjust the per-device cost variables below to see the impact on
+          break-even and final profit.
+        </p>
+        <p class="nav-links">
+          <a href="MOU.md">Read the MOU</a>
+          <span aria-hidden="true">&middot;</span>
+          <a
+            href="https://github.com/Neurotech-Hub/FED4-MOU"
+            rel="noopener noreferrer"
+            >Repository</a
+          >
+        </p>
+      </header>
+
+      <section class="controls" aria-labelledby="controls-heading">
+        <h2 id="controls-heading">Per-Device Cost Variables</h2>
+        <p class="controls-hint">
+          Drag a slider, click on its track, or use arrow keys to step in $10
+          increments. <code>PACKAGING_COST</code> is fixed at $20 and
+          <code>LABOR_RATE</code> is not modeled here.
+        </p>
+
+        <div class="slider-grid">
+          <div class="slider">
+            <label for="pcb-battery-cost">
+              <span class="slider-name"><code>PCB_BATTERY_COST</code></span>
+              <span class="slider-value" id="pcb-battery-cost-value">$150</span>
+            </label>
+            <input
+              type="range"
+              id="pcb-battery-cost"
+              min="100"
+              max="200"
+              step="10"
+              value="150"
+              aria-describedby="pcb-battery-cost-range"
+            />
+            <div class="slider-range" id="pcb-battery-cost-range">
+              <span>$100</span>
+              <span>$200</span>
+            </div>
+            <p class="slider-desc">PCB and battery cost per device.</p>
+          </div>
+
+          <div class="slider">
+            <label for="enclosure-cost">
+              <span class="slider-name"><code>ENCLOSURE_COST</code></span>
+              <span class="slider-value" id="enclosure-cost-value">$100</span>
+            </label>
+            <input
+              type="range"
+              id="enclosure-cost"
+              min="30"
+              max="120"
+              step="10"
+              value="100"
+              aria-describedby="enclosure-cost-range"
+            />
+            <div class="slider-range" id="enclosure-cost-range">
+              <span>$30</span>
+              <span>$120</span>
+            </div>
+            <p class="slider-desc">Enclosure cost per device.</p>
+          </div>
+
+          <div class="slider">
+            <label for="assembly-programming-cost">
+              <span class="slider-name"
+                ><code>ASSEMBLY_PROGRAMMING_COST</code></span
+              >
+              <span class="slider-value" id="assembly-programming-cost-value"
+                >$60</span
+              >
+            </label>
+            <input
+              type="range"
+              id="assembly-programming-cost"
+              min="30"
+              max="100"
+              step="10"
+              value="60"
+              aria-describedby="assembly-programming-cost-range"
+            />
+            <div
+              class="slider-range"
+              id="assembly-programming-cost-range"
+            >
+              <span>$30</span>
+              <span>$100</span>
+            </div>
+            <p class="slider-desc">Routine assembly/programming cost per device.</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="summary"
+        aria-labelledby="summary-heading"
+        aria-live="polite"
+      >
+        <h2 id="summary-heading">Derived Values</h2>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <div class="summary-label"><code>BASE_DEVICE_COST</code></div>
+            <div class="summary-value" id="base-device-cost">$330</div>
+            <div class="summary-sub">per device</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label"><code>INTERNAL_SALE_PRICE</code></div>
+            <div class="summary-value" id="internal-sale-price">$429</div>
+            <div class="summary-sub">30% margin, internal WashU</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label"><code>EXTERNAL_SALE_PRICE</code></div>
+            <div class="summary-value" id="external-sale-price">$515</div>
+            <div class="summary-sub">+20% institutional tax (to WashU)</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Hub profit per unit</div>
+            <div class="summary-value" id="profit-per-unit">$99</div>
+            <div class="summary-sub">same on internal &amp; external</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Initial cash position</div>
+            <div class="summary-value negative" id="initial-position">
+              -$39,000
+            </div>
+            <div class="summary-sub">debt + first restock</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Break-even unit</div>
+            <div class="summary-value" id="break-even-unit">&mdash;</div>
+            <div class="summary-sub">first unit where cash &ge; $0</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-label">Final profit @ 1,000 units</div>
+            <div class="summary-value" id="final-profit">$93,000</div>
+            <div class="summary-sub">end of <code>EXCLUSIVE_UNITS</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-section" aria-labelledby="chart-heading">
+        <h2 id="chart-heading">Cumulative Cash Position</h2>
+        <div class="chart-wrapper">
+          <canvas id="profit-chart" aria-label="Neurotech Hub cumulative cash position by units sold"></canvas>
+        </div>
+      </section>
+
+      <section class="assumptions" aria-labelledby="assumptions-heading">
+        <h2 id="assumptions-heading">Fixed Assumptions</h2>
+        <ul>
+          <li>
+            <strong>Engineering debt:</strong> $6,000 (FY26: ~100 hrs at
+            <code>LABOR_RATE</code> = $60/hr).
+          </li>
+          <li>
+            <strong><code>PACKAGING_COST</code>:</strong> fixed at $20 per
+            device (not exposed as a slider).
+          </li>
+          <li>
+            <strong><code>NTH_INTERNAL_MARGIN</code>:</strong> fixed at 30%.
+          </li>
+          <li>
+            <strong><code>INSTITUTIONAL_GOODS_TAX</code>:</strong> 20% on
+            external sales (paid to WashU; Hub margin is unchanged).
+          </li>
+          <li>
+            <strong>Sales mix:</strong> assumed 50% internal / 50% external.
+            Informational only &mdash; the Hub's per-unit profit is the same
+            in either channel.
+          </li>
+          <li>
+            <strong><code>RESTOCK_BATCH</code>:</strong> 100 units. The Hub
+            restocks 100 at a time, starting with an initial batch before
+            unit&nbsp;1.
+          </li>
+          <li>
+            <strong><code>EXCLUSIVE_UNITS</code>:</strong> 1,000 units &mdash;
+            the end of the exclusive distribution phase modeled here.
+          </li>
+        </ul>
+      </section>
+
+      <footer class="page-footer">
+        <p>
+          See the <a href="MOU.md">MOU</a> for variable definitions and
+          contract terms. Calculator is informational and does not constitute a
+          formal financial projection.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
