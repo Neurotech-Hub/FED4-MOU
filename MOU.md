@@ -20,10 +20,10 @@ The Parties intend for the following variables to be easily adjustable without r
 | `PACKAGING_COST`            |                                                        Expected packaging cost per device |
 | `LABOR_RATE`                |                                Neurotech Hub at-cost labor rate for routine/rote services |
 | `BASE_DEVICE_COST`          |                               Expected per-device cost before margin or institutional tax |
-| `NTH_INTERNAL_MARGIN`       |                                                    Neurotech Hub internal margin (fixed) |
+| `NTH_INTERNAL_MARGIN`       |                                                     Neurotech Hub internal margin (fixed) |
 | `INSTITUTIONAL_GOODS_TAX`   |                                       Institutional tax imposed on external sale of goods |
-| `INTERNAL_SALE_PRICE`       |                                                                Internal WashU sale price |
-| `EXTERNAL_SALE_PRICE`       |                                                            External non-WashU sale price |
+| `INTERNAL_SALE_PRICE`       |                                                                 Internal WashU sale price |
+| `EXTERNAL_SALE_PRICE`       |                                                             External non-WashU sale price |
 
 The relationships among these variables are:
 
@@ -93,11 +93,11 @@ Before sole distribution rights for the `EXCLUSIVE_UNITS` units begin, the Parti
 
 ### 4.1 Purpose of Beta-Test Units
 
-The purpose of the beta-test units is to harden FED4 software, hardware, assembly practices, documentation, and support procedures before broader distribution. The Parties expressly agree that beta-test units are not gifts. Beta-test units are development and validation units produced for the specific purpose of evaluating and improving FED4.
+The purpose of the beta-test units is to harden FED4 software, hardware, assembly practices, documentation, and support procedures with internal testers before broader distribution. The distribution and ownership of the beta-test units shall be determined by the funder of said units. Beta-test units are development and validation units produced for the specific purpose of evaluating and improving FED4.
 
 ### 4.2 Local Production and Testing
 
-The beta-test units will be produced and tested locally at Washington University in St. Louis, in collaboration between Neurotech Hub, Kravitz Lab, and participating laboratories.
+The beta-test units will be produced and tested locally at Washington University in St. Louis, in collaboration between Neurotech Hub, Kravitz Lab, and participating laboratories. The Neurotech Hub may or may not provide above-and-beyond user support for these units as the owners of these units are not deemed 'customers'. As such, no warranties will be provided.
 
 ### 4.3 Beta-Test Cost Treatment
 
@@ -263,6 +263,16 @@ The following illustrative cases are intended to guide the Parties when determin
 8. **Disputed.** Where the Parties cannot agree whether a specific innovation is independent or shared, the Parties will default to joint disclosure and good-faith negotiation before either Party makes a standalone disclosure, publication, or filing.
 
 In all cases, the Parties will use reasonable judgment, document the basis for an independence determination in writing, and continue to honor the attribution expectations described in Section 10.5.
+
+### 10.7 Shared Publication Agreement
+
+The Parties intend to coordinate on FED4-related publications, including posters, manuscripts, preprints, conference abstracts, technical reports, and published protocols.
+
+1. **Initial publications.** The first FED4-related publications in each category (the first poster, the first manuscript or preprint, and the first published protocol) shall be jointly authored by representatives of the Kravitz Lab and the Neurotech Hub. Author order and corresponding-author designation will be determined in good faith based on each Party's relative contribution to the specific publication.
+2. **Subsequent publications.** For FED4-related publications after the initial joint publications, the publishing Party will consult the other Party reasonably in advance of submission, share a draft sufficient for meaningful review, and consider the other Party's feedback in good faith.
+3. **Areas of expertise.** When consulted on a publication, Kravitz Lab will serve as the scientific and behavioral expert, with primary responsibility for reviewing experimental design, behavioral interpretation, scientific framing, and end-user-facing claims. Neurotech Hub will serve as the technical and methods expert, with primary responsibility for reviewing hardware descriptions, firmware behavior, electronics specifications, manufacturing methods, and other technical/methods sections.
+4. **Acknowledgment and authorship.** Even where a publication is led by a single Party, the other Party will be offered authorship or acknowledgment commensurate with its contribution to the work being published, consistent with the attribution expectations in Section 10.5 and applicable journal authorship standards.
+5. **Disputes.** Where the Parties disagree on authorship, content accuracy, or release timing of a publication, the Parties will discuss in good faith before submission and will not make claims about the other Party's contributions without that Party's consent.
 
 ## 11. Future Distribution After First `EXCLUSIVE_UNITS` Units
 
