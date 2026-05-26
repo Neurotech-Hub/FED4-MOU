@@ -2,7 +2,6 @@
   "use strict";
 
   const PACKAGING_COST = 20;
-  const NTH_INTERNAL_MARGIN = 0.3;
   const INSTITUTIONAL_GOODS_TAX = 0.2;
   const ENGINEERING_DEBT = 6000;
   const PRE_PRODUCTION_DEBT = 2400;
@@ -23,13 +22,17 @@
     maximumFractionDigits: 2,
   });
 
+  const percentFmt = (value) => `${Math.round(value * 100)}%`;
+
   const sliders = {
+    margin: document.getElementById("nth-internal-margin"),
     pcb: document.getElementById("pcb-battery-cost"),
     enclosure: document.getElementById("enclosure-cost"),
     assembly: document.getElementById("assembly-programming-cost"),
   };
 
   const sliderValueEls = {
+    margin: document.getElementById("nth-internal-margin-value"),
     pcb: document.getElementById("pcb-battery-cost-value"),
     enclosure: document.getElementById("enclosure-cost-value"),
     assembly: document.getElementById("assembly-programming-cost-value"),
@@ -38,6 +41,7 @@
   const summaryEls = {
     baseDeviceCost: document.getElementById("base-device-cost"),
     internalSalePrice: document.getElementById("internal-sale-price"),
+    internalSalePriceSub: document.getElementById("internal-sale-price-sub"),
     externalSalePrice: document.getElementById("external-sale-price"),
     profitPerUnit: document.getElementById("profit-per-unit"),
     initialPosition: document.getElementById("initial-position"),
@@ -48,6 +52,7 @@
 
   function readState() {
     return {
+      margin: Number(sliders.margin.value) / 100,
       pcb: Number(sliders.pcb.value),
       enclosure: Number(sliders.enclosure.value),
       assembly: Number(sliders.assembly.value),
@@ -57,10 +62,10 @@
   function computeModel(state) {
     const baseDeviceCost =
       state.pcb + state.enclosure + state.assembly + PACKAGING_COST;
-    const internalSalePrice = baseDeviceCost * (1 + NTH_INTERNAL_MARGIN);
+    const internalSalePrice = baseDeviceCost * (1 + state.margin);
     const externalSalePrice =
       internalSalePrice * (1 + INSTITUTIONAL_GOODS_TAX);
-    const profitPerUnit = baseDeviceCost * NTH_INTERNAL_MARGIN;
+    const profitPerUnit = baseDeviceCost * state.margin;
 
     const restockCost = RESTOCK_BATCH * baseDeviceCost;
     const initialPosition = -TOTAL_ENGINEERING_DEBT - restockCost;
@@ -98,6 +103,7 @@
     }
 
     return {
+      margin: state.margin,
       baseDeviceCost,
       internalSalePrice,
       externalSalePrice,
@@ -117,6 +123,9 @@
     summaryEls.internalSalePrice.textContent = currencyPreciseFmt.format(
       model.internalSalePrice
     );
+    summaryEls.internalSalePriceSub.textContent = `${percentFmt(
+      model.margin
+    )} margin, internal WashU`;
     summaryEls.externalSalePrice.textContent = currencyPreciseFmt.format(
       model.externalSalePrice
     );
@@ -153,6 +162,7 @@
   }
 
   function updateSliderLabels(state) {
+    sliderValueEls.margin.textContent = percentFmt(state.margin);
     sliderValueEls.pcb.textContent = currencyFmt.format(state.pcb);
     sliderValueEls.enclosure.textContent = currencyFmt.format(state.enclosure);
     sliderValueEls.assembly.textContent = currencyFmt.format(state.assembly);

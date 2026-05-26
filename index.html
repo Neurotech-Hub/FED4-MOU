@@ -43,12 +43,41 @@
       <section class="controls" aria-labelledby="controls-heading">
         <h2 id="controls-heading">Per-Device Cost Variables</h2>
         <p class="controls-hint">
-          Drag a slider, click on its track, or use arrow keys to step in $10
-          increments. <code>PACKAGING_COST</code> is fixed at $20 and
-          <code>LABOR_RATE</code> is not modeled here.
+          Drag a slider, click on its track, or use arrow keys to step.
+          <code>NTH_INTERNAL_MARGIN</code> steps in 10% increments; cost
+          sliders step in $10 increments. <code>PACKAGING_COST</code> is
+          fixed at $20 and <code>LABOR_RATE</code> is not modeled here.
         </p>
 
         <div class="slider-grid">
+          <div class="slider">
+            <label for="nth-internal-margin">
+              <span class="slider-name"
+                ><code>NTH_INTERNAL_MARGIN</code></span
+              >
+              <span class="slider-value" id="nth-internal-margin-value"
+                >30%</span
+              >
+            </label>
+            <input
+              type="range"
+              id="nth-internal-margin"
+              min="10"
+              max="70"
+              step="10"
+              value="30"
+              aria-describedby="nth-internal-margin-range"
+            />
+            <div class="slider-range" id="nth-internal-margin-range">
+              <span>10%</span>
+              <span>70%</span>
+            </div>
+            <p class="slider-desc">
+              Markup applied over <code>BASE_DEVICE_COST</code> on internal
+              WashU sales.
+            </p>
+          </div>
+
           <div class="slider">
             <label for="pcb-battery-cost">
               <span class="slider-name"><code>PCB_BATTERY_COST</code></span>
@@ -136,7 +165,9 @@
           <div class="summary-card">
             <div class="summary-label"><code>INTERNAL_SALE_PRICE</code></div>
             <div class="summary-value" id="internal-sale-price">$429</div>
-            <div class="summary-sub">30% margin, internal WashU</div>
+            <div class="summary-sub" id="internal-sale-price-sub">
+              30% margin, internal WashU
+            </div>
           </div>
           <div class="summary-card">
             <div class="summary-label"><code>EXTERNAL_SALE_PRICE</code></div>
@@ -198,9 +229,6 @@
           <li>
             <strong><code>PACKAGING_COST</code>:</strong> fixed at $20 per
             device (not exposed as a slider).
-          </li>
-          <li>
-            <strong><code>NTH_INTERNAL_MARGIN</code>:</strong> fixed at 30%.
           </li>
           <li>
             <strong><code>INSTITUTIONAL_GOODS_TAX</code>:</strong> 20% on
