@@ -2,7 +2,7 @@
 
 **FED4 Development, Beta Testing, Distribution, and Support**
 
-This Memorandum of Understanding (“MOU”) is entered into by and between **Washington University in St. Louis, acting through the Neurotech Hub** (“Neurotech Hub”) and **Lex Kravitz / Kravitz Lab** (“Kravitz Lab”). Neurotech Hub and Kravitz Lab may be referred to individually as a “Party” and collectively as the “Parties.”
+This Memorandum of Understanding (“MOU”) is entered into by and between **Matthew Gaidica / the Neurotech Hub** (“Neurotech Hub”) and **Allexai Kravitz / Kravitz Lab** (“Kravitz Lab”). Neurotech Hub and Kravitz Lab may be referred to individually as a “Party” and collectively as the “Parties.”
 
 **Effective Date:** [DATE]
 
@@ -340,29 +340,25 @@ This MOU may be amended only by written agreement of the Parties.
 ### 16.5 Points of Contact
 
 **For Neurotech Hub:**
-Name: [NAME]
-Title: [TITLE]
+Name: Matthew Gaidica, PhD
+Title: Assistant Professor, Department of Neuroscience; Director, Neurotech Hub
 Email: [EMAIL]
 
 **For Kravitz Lab:**
-Name: [NAME]
-Title: [TITLE]
+Name: Allexai Kravitz, PhD
+Title: Associate Professor, Department of Psychiatry
 Email: [EMAIL]
 
 ## 17. Signatures
 
 By signing below, the Parties acknowledge their understanding of and agreement to the terms of this MOU.
 
-**Washington University in St. Louis / Neurotech Hub**
+**Matthew Gaidica / Neurotech Hub**
 
 Signature: _______________________________
-Name: _______________________________
-Title: _______________________________
 Date: _______________________________
 
-**Lex Kravitz / Kravitz Lab**
+**Allexai Kravitz / Kravitz Lab**
 
 Signature: _______________________________
-Name: _______________________________
-Title: _______________________________
 Date: _______________________________
