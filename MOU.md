@@ -2,7 +2,7 @@
 
 **FED4 Development, Beta Testing, Distribution, and Support**
 
-This Memorandum of Understanding (“MOU”) is entered into by and between **Matthew Gaidica / the Neurotech Hub** (“Neurotech Hub”) and **Allexai Kravitz / Kravitz Lab** (“Kravitz Lab”). Neurotech Hub and Kravitz Lab may be referred to individually as a “Party” and collectively as the “Parties.”
+This Memorandum of Understanding (“MOU”) is entered into by and between **Matthew Gaidica / the Neurotech Hub** (“Neurotech Hub”) and **Alexxai Kravitz / Kravitz Lab** (“Kravitz Lab”). Neurotech Hub and Kravitz Lab may be referred to individually as a “Party” and collectively as the “Parties.”
 
 **Effective Date:** [DATE]
 
@@ -128,6 +128,20 @@ The Parties will separately coordinate, as needed, regarding timing, scope, lice
 ### 5.3 Counting Units Toward `EXCLUSIVE_UNITS`
 
 A FED4 unit will count toward `EXCLUSIVE_UNITS` when it is sold, invoiced, or otherwise commercially distributed by Neurotech Hub, excluding beta-test units produced under Section 4 unless the Parties agree otherwise in writing.
+
+### 5.4 Sub-Distribution
+
+Either Party may engage one or more third-party sub-distributors or fulfillment partners (each, a "Sub-Distributor") to support sales of FED4 units to international communities or to communities that are not immediately accessible through Washington University channels.
+
+Engagement of a Sub-Distributor is intended to accommodate international shipping, customs, regional regulatory and tax requirements, currency handling, and regional user support that may be impractical for Neurotech Hub to provide directly.
+
+1. **Hub remains primary distributor.** Neurotech Hub remains the primary, contractual distributor of record under Section 5. A Sub-Distributor acts under Neurotech Hub's distribution rights, not as an independent vendor under Section 11.
+2. **Pricing.** Neurotech Hub will sell FED4 units to a Sub-Distributor at a wholesale price not less than `INTERNAL_SALE_PRICE`, preserving Neurotech Hub's `NTH_INTERNAL_MARGIN`. The Sub-Distributor may add a reasonable handling, fulfillment, and regional-support margin on top of that wholesale price. `INSTITUTIONAL_GOODS_TAX` will be applied to the extent required by Washington University or applicable institutional policy for wholesale transactions.
+3. **Counting toward `EXCLUSIVE_UNITS`.** FED4 units sold or commercially distributed through a Sub-Distributor count toward `EXCLUSIVE_UNITS` on the same basis as direct Neurotech Hub sales, consistent with Section 5.3.
+4. **Selection and notice.** The engaging Party will select a Sub-Distributor in good faith and will notify the other Party in writing before engaging the Sub-Distributor, including the proposed regional scope, pricing structure, and support model. The other Party will have a reasonable opportunity to comment before the arrangement is finalized.
+5. **Support.** A Sub-Distributor may serve as the first-line regional point of contact for end-user support, escalating to Neurotech Hub or Kravitz Lab consistent with the support division in Section 8.
+6. **Compliance.** All Sub-Distributor arrangements remain subject to applicable Washington University policies, U.S. and destination-country export controls, customs and tax requirements, and the institutional requirements described in Section 16.1.
+7. **Term.** A Sub-Distributor arrangement is independent of this MOU's term. Termination or expiration of this MOU under Section 14 does not by itself terminate a properly executed Sub-Distributor arrangement.
 
 ## 6. Pricing and Margin
 
@@ -274,9 +288,21 @@ The Parties intend to coordinate on FED4-related publications, including posters
 4. **Acknowledgment and authorship.** Even where a publication is led by a single Party, the other Party will be offered authorship or acknowledgment commensurate with its contribution to the work being published, consistent with the attribution expectations in Section 10.5 and applicable journal authorship standards.
 5. **Disputes.** Where the Parties disagree on authorship, content accuracy, or release timing of a publication, the Parties will discuss in good faith before submission and will not make claims about the other Party's contributions without that Party's consent.
 
-## 11. Future Distribution After First `EXCLUSIVE_UNITS` Units
+## 11. After First `EXCLUSIVE_UNITS` Units
 
-After Neurotech Hub has sold or commercially distributed the first `EXCLUSIVE_UNITS` FED4 units, Kravitz Lab reserves the right to enter distribution terms with other vendors.
+### 11.1 Continuation Cost-Share Expectation
+
+The Parties intend that, after the first `EXCLUSIVE_UNITS` units have been sold or commercially distributed by Neurotech Hub, they will negotiate in good faith a successor or renewed agreement structured as a cost-share arrangement between the Parties. The purpose of this successor agreement is to continue the FED4 collaboration described in this MOU on terms that mutually benefit the financial bases of both Parties.
+
+Specific terms — including, without limitation, capital and inventory contribution shares, restock and risk-of-stock funding, fulfillment responsibilities, revenue sharing, ongoing pricing, governance, support obligations, term length, and termination provisions — will be defined in a separate written cost-share agreement executed by the Parties. This MOU does not bind either Party to any particular cost-share terms.
+
+The expectation expressed in this Section 11.1 is in addition to, and does not limit, the alternative distribution arrangements available to Kravitz Lab under Section 11.2.
+
+### 11.2 Alternative Distribution Arrangements
+
+After Neurotech Hub has sold or commercially distributed the first `EXCLUSIVE_UNITS` FED4 units, Kravitz Lab reserves the right to enter distribution terms with other vendors. This right is independent of, and not conditioned on, the cost-share negotiation described in Section 11.1.
+
+### 11.3 Pricing Considerations
 
 If Kravitz Lab enters into distribution terms with another vendor after the exclusive distribution period, Kravitz Lab agrees that the sale price offered by such vendor should remain within 20% of Neurotech Hub’s then-current FED4 sale price for a substantially comparable device configuration, unless otherwise agreed by the Parties in writing.
 
@@ -284,7 +310,7 @@ Neurotech Hub agrees that its FED4 sale price will be set to cover actual costs,
 
 ## 12. Records and Reporting
 
-Neurotech Hub will maintain reasonable records of FED4 units sold during the exclusive distribution period, including unit counts sufficient to determine progress toward `EXCLUSIVE_UNITS`. Upon reasonable request, Neurotech Hub will provide Kravitz Lab with summary reporting on units sold, general purchaser category, production batches, and major recurring support issues.
+Neurotech Hub will maintain reasonable records of FED4 units sold during the exclusive distribution period, including unit counts sufficient to determine progress toward `EXCLUSIVE_UNITS`. Upon reasonable request, Neurotech Hub will provide Kravitz Lab with summary reporting on units sold, general purchaser category, production batches, and major recurring support issues. Reporting will include units sold or distributed through any Sub-Distributor engaged under Section 5.4, broken out by region where reasonably feasible.
 
 ## 13. Buyout Option
 
@@ -345,7 +371,7 @@ Title: Assistant Professor, Department of Neuroscience; Director, Neurotech Hub
 Email: [EMAIL]
 
 **For Kravitz Lab:**
-Name: Allexai Kravitz, PhD
+Name: Alexxai Kravitz, PhD
 Title: Associate Professor, Department of Psychiatry
 Email: [EMAIL]
 
