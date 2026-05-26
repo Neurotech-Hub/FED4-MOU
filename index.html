@@ -22,10 +22,12 @@
         <p class="lede">
           Models the <strong>Neurotech Hub's</strong> cumulative cash position
           during the <code>EXCLUSIVE_UNITS</code> phase, starting from an FY26
-          engineering investment of <strong>~100 hours @ $60/hr = $6,000</strong>
-          and an initial stocking batch of <code>RESTOCK_BATCH</code> units.
-          Adjust the per-device cost variables below to see the impact on
-          break-even and final profit.
+          engineering investment of <strong>~100 hours @ $60/hr = $6,000</strong>,
+          an additional <strong>~40 hours of pre-production engineering</strong>
+          @ $60/hr = $2,400 needed before the device is ready to enter the
+          1,000-unit agreement, and an initial stocking batch of
+          <code>RESTOCK_BATCH</code> units. Adjust the per-device cost
+          variables below to see the impact on break-even and final profit.
         </p>
         <p class="nav-links">
           <a href="MOU.md">Read the MOU</a>
@@ -149,9 +151,9 @@
           <div class="summary-card">
             <div class="summary-label">Initial cash position</div>
             <div class="summary-value negative" id="initial-position">
-              -$39,000
+              -$41,400
             </div>
-            <div class="summary-sub">debt + first restock</div>
+            <div class="summary-sub">engineering debt + first restock</div>
           </div>
           <div class="summary-card">
             <div class="summary-label">Break-even unit</div>
@@ -160,7 +162,7 @@
           </div>
           <div class="summary-card">
             <div class="summary-label">Final profit @ 1,000 units</div>
-            <div class="summary-value" id="final-profit">$93,000</div>
+            <div class="summary-value" id="final-profit">$90,600</div>
             <div class="summary-sub">end of <code>EXCLUSIVE_UNITS</code></div>
           </div>
         </div>
@@ -177,8 +179,14 @@
         <h2 id="assumptions-heading">Fixed Assumptions</h2>
         <ul>
           <li>
-            <strong>Engineering debt:</strong> $6,000 (FY26: ~100 hrs at
-            <code>LABOR_RATE</code> = $60/hr).
+            <strong>Engineering debt to date:</strong> $6,000 (FY26: ~100 hrs
+            at <code>LABOR_RATE</code> = $60/hr).
+          </li>
+          <li>
+            <strong>Pre-production engineering:</strong> $2,400 (~40 hrs at
+            <code>LABOR_RATE</code> = $60/hr) expected before the device is
+            ready to enter the 1,000-unit agreement. Total engineering
+            investment before sales begin: $8,400.
           </li>
           <li>
             <strong><code>PACKAGING_COST</code>:</strong> fixed at $20 per

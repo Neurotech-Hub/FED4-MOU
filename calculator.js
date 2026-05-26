@@ -5,6 +5,8 @@
   const NTH_INTERNAL_MARGIN = 0.3;
   const INSTITUTIONAL_GOODS_TAX = 0.2;
   const ENGINEERING_DEBT = 6000;
+  const PRE_PRODUCTION_DEBT = 2400;
+  const TOTAL_ENGINEERING_DEBT = ENGINEERING_DEBT + PRE_PRODUCTION_DEBT;
   const RESTOCK_BATCH = 100;
   const EXCLUSIVE_UNITS = 1000;
 
@@ -60,7 +62,7 @@
     const profitPerUnit = baseDeviceCost * NTH_INTERNAL_MARGIN;
 
     const restockCost = RESTOCK_BATCH * baseDeviceCost;
-    const initialPosition = -ENGINEERING_DEBT - restockCost;
+    const initialPosition = -TOTAL_ENGINEERING_DEBT - restockCost;
 
     const data = [];
     let position = initialPosition;
